@@ -56,11 +56,6 @@ class FLNativeView: NSObject, FlutterPlatformView,WKUIDelegate,UIGestureRecogniz
         webView = FLWebView(frame: CGRect.init(x: 0, y: 0, width: 500, height: 500))
         self._view.addSubview(webView)
         
-//        let myURL = URL(string:"http://192.168.0.139:9099/startup.html")
-//               let myRequest = URLRequest(url: myURL!)
-//               webView.load(myRequest)
-       
-
     }
 
 }
@@ -95,7 +90,7 @@ class FLWebView: UIView,UIGestureRecognizerDelegate {
   </body>
   <script>
       var a = 1;
-      function myFunction() {
+      function myFunction(event) {
          console.log("on click call");
          a ++;
 
@@ -105,30 +100,9 @@ class FLWebView: UIView,UIGestureRecognizerDelegate {
   </html>
   """
         webview.loadHTMLString(html, baseURL: nil)
-        
-        let tap = UITapGestureRecognizer.init(target: self, action: #selector(tapAction))
-        tap.delegate = self
-        self.addGestureRecognizer(tap)
-        
     }
     
-    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
-        print("touch began")
-        super.touchesBegan(touches, with: event)
-    }
-    
-    override func touchesEnded(_ touches: Set<UITouch>, with event: UIEvent?) {
-        print("touch ended")
-        super.touchesEnded(touches, with: event)
-    }
-    override func touchesCancelled(_ touches: Set<UITouch>, with event: UIEvent?) {
-        print("touch cancelled")
-        super.touchesCancelled(touches, with: event)
-    }
-    
-   @objc func tapAction()  {
-        print("on tap")
-    }
+ 
     
     override func hitTest(_ point: CGPoint, with event: UIEvent?) -> UIView? {
         
@@ -137,17 +111,9 @@ class FLWebView: UIView,UIGestureRecognizerDelegate {
         let gestureRecognizers = self.superview?.superview?.gestureRecognizers ?? []
         for gesture in gestureRecognizers{
             print(gesture)
-            gesture.isEnabled = false
+                //gesture.isEnabled = false
         }
         return view
     }
-    
-    override func point(inside point: CGPoint, with event: UIEvent?) -> Bool {
-       
-
-        return true;
-    }
-    
-    
     
 }

@@ -1,0 +1,29 @@
+<!--
+ * @Author: 杨雪剑
+ * @Date: 2021-11-27 15:29:40
+ * @LastEditTime: 2021-11-28 00:38:19
+ * @LastEditors: 杨雪剑
+ * @Description: 
+-->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <button onclick="myFunction()">click</button>
+    <div id="click-preview"></div>
+</body>
+<script>
+    var a = 1;
+    function myFunction(event) {
+       console.log("on click call"); 
+       a ++;
+       document.getElementById("click-preview").innerText = a.toString();
+    }
+</script>
+</html>
