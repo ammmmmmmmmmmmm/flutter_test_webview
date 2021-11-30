@@ -1,7 +1,12 @@
+/*
+ * @Author: 杨雪剑
+ * @Date: 2021-11-30 10:34:19
+ * @LastEditTime: 2021-11-30 10:37:15
+ * @LastEditors: 杨雪剑
+ * @Description: 
+ */
 import 'package:flutter/material.dart';
-import 'package:flutter_app_test_webview/inline_app.dart';
 import 'package:flutter_app_test_webview/native_view.dart';
-import 'package:flutter_inappwebview/flutter_inappwebview.dart';
 
 void main() {
   runApp(const MyApp());
